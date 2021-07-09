@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS: Higher-Order Functions</title>
-  </head>
-  <body>
-    <main
-      style="
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>JS: Higher-Order Functions</title>
+</head>
+
+<body>
+  <main style="
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-      "
-    >
-      <div>
-        <h1>JS: Higher-Order Functions</h1>
-        <p>
-          Open the Browser Console to view your work (Right-Click => Inspect or
-          fn+F12)
-        </p>
-      </div>
-    </main>
+      ">
+    <div>
+      <h1>JS: Higher-Order Functions</h1>
+      <p>
+        Open the Browser Console to view your work (Right-Click => Inspect or
+        fn+F12)
+      </p>
 
-    <script src="app.js"></script>
-  </body>
+      <!-- Form Input -->
+      <form id="form" method="POST"
+        action="javascript:controller(array.value, bookTitle.value, numberOfPages.value, numberTimesRead.value);"
+        onsubmit="return validateForm(array.value)">
+        <h4>Exercise Entry Form</h4>
+        <label for="functionNumber">Enter Function Number: </label>
+        <input type="number" name="functionNumber" id="functionNumber" min="1" max="1000" required>
+        <label for="bookTitle">Enter Number to add To:</label>
+        <input type="number" id="bookTitle" name="bookTitle" min="1" max="1000" required>
+        <br>
+        <button type="submit" value="Submit">Submit</button>
+        <p id="error"></p>
+      </form>
+      
+      <!-- Exercise Output -->
+      <h4>Exercise 1 - Sum of Array - Output Appends</h4>
+      <p id="exercise-1">
+      </p>
+      <h4>Exercise 2 - Book Info</h4>
+      <p id="exercise-2">
+      </p>
+
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
 </html>
