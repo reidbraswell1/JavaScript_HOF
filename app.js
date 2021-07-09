@@ -3,15 +3,6 @@ console.log("Hello World!\n==========\n");
 // Exercise 1 Section
 console.log("EXERCISE 1:\n==========\n");
 
-function plus(num) {
-    return function(plusNum) {
-        return num + plusNum;
-    }
-}
-
-const plus15 = plus(15);
-console.log(plus15(20));
-
 /*
  * Controlling function that calls other
  * functions:
@@ -27,17 +18,22 @@ function controller(arrayP, bookTitleP, numberOfPagesP, numberTimesReadP) {
   console.log(
     `Parameters = Array:"${arrayP}", BookTitle:"${bookTitleP}", NumberOfPages:"${numberOfPagesP}", NumberTimesRead:"${numberTimesReadP}"`
   );
+}
 
- 
-  }
+function plus(num) {
+  return function (plusNum) {
+    return num + plusNum;
+  };
+}
+
+const plusAnyNumber = plus(anyNumber);
+console.log(plusAnyNumber(20));
 
 /*
  * Form validation function.
  *
  */
 function validateForm() {
-    console.log("Begin validateForm()");
-    return true;
-  }
-  
-
+  console.log("Begin validateForm()");
+  return true;
+}
