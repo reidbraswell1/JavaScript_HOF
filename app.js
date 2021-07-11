@@ -9,9 +9,10 @@ function constants() {
     blackStyleColor: "black",
     blueStyleColor: "blue",
     break: "br",
+    span: "span",
     errorElementId: "error",
     exerciseOneElementId: "exercise-1",
-    exerciseTwoElementId: "exercise-2",
+    exerciseOne_B_ElementId: "exercise-1b",
     formElementId: "form",
     redStyleColor: "red"
   };
@@ -32,12 +33,18 @@ function controller(functionNumber, functionValue) {
   console.log("Begin controller()");
   console.log(`Parameters:\nfunctionNumber=${functionNumber}, functionValue=${functionValue}`);
   let anyNumber = functionNumber * 1;
-  const plusAnyNumber = plus(anyNumber);
-  let textNode = document.createTextNode(`plus${functionNumber}=>plus(${functionValue})=${plusAnyNumber(functionValue * 1)}`);
-  let breakElement = document.createElement(constants().br);
-  document.getElementById(constants().exerciseOneElementId).appendChild(textNode)
-  document.getElementById(constants().exerciseOneElementId).appendChild(breakElement);
-  console.log(plusAnyNumber(20));
+  let plusAnyNumber = plus(anyNumber);
+  let plusAnyNumber2 = plus2(anyNumber);
+  let textNode1 = document.createTextNode(`plus${functionNumber}=>plus(${functionValue})=${plusAnyNumber(functionValue * 1)}`);
+  let textNode2 = document.createTextNode(`plus${functionNumber}=>plus2(${functionValue})=${plusAnyNumber2(functionValue * 1)}`);
+  let breakElement = document.createElement(constants().break);
+  let spanElement = document.createElement(constants().span);
+  document.getElementById(constants().exerciseOneElementId).appendChild(textNode1);
+  document.getElementById(constants().exerciseOneElementId).appendChild(spanElement);
+  document.getElementById(constants().exerciseOne_B_ElementId).appendChild(textNode2);
+  document.getElementById(constants().exerciseOne_B_ElementId).appendChild(breakElement);
+  console.log("EXERCISE 1: OUTPUT");
+  console.log(`plus${functionNumber}=>plus(${functionValue})=${plusAnyNumber(functionValue * 1)}`);
   // Reset the form
   document.getElementById(constants().formElementId).reset();
 
@@ -59,6 +66,8 @@ function plus2(num) {
 
 /*
  * Form validation function.
+ * No special validation for this exercise
+ * HTML validation is being used.
  *
  */
 function validateForm(functionNumber, functionValue) {
