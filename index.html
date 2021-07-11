@@ -21,10 +21,26 @@
         Open the Browser Console to view your work (Right-Click => Inspect or
         fn+F12)
       </p>
+      <hr class="horizontalRule">
+
+      <p class="explanation">Function number controls the type of function returned. For example
+        if you enter 25 for the function number then you will get
+        something like this function returned.
+      </p>
+      <code>
+<pre>
+plus25 = plus(2nd value);
+</pre>
+</code>
+      <p class="explanation">
+        In the parenthesis the 2nd value will be one you
+        enter "Enter Number to add to:" input element. In the example
+        the 2nd number would be added to 25 assuming you entered 25
+        for the first value.
+      </p>
 
       <!-- Form Input -->
-      <form id="form" method="POST"
-        action="javascript:controller(functionNumber.value, functionValue.value);"
+      <form id="form" method="POST" action="javascript:controller(functionNumber.value, functionValue.value);"
         onsubmit="return validateForm(functionNumber.value, functionValue.value)">
         <h4>Exercise Entry Form</h4>
         <label for="functionNumber">Enter Function Number: </label>
@@ -35,13 +51,14 @@
         <button type="submit" value="Submit">Submit</button>
         <p id="error"></p>
       </form>
-      
+
       <!-- Exercise Output -->
-      <h4>Exercise 1 - Sum of Array - Output Appends</h4>
+      <h4>Exercise 1 - Higher Order Functions - Output Appends<br>
+        Left Panel Standard function Right Panel - Lambda Style function
+      </h4>
       <p id="exercise-1">
       </p>
-      <h4>Exercise 2 - Book Info</h4>
-      <p id="exercise-2">
+      <p id="exercise-1b"></p>
       </p>
 
     </div>
