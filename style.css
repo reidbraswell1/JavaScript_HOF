@@ -1,8 +1,25 @@
+.horizontalRule {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CSS Trick */
+span {
+    display: block;
+}
+
 form {
     border: 1px solid black;
     width: 40%;
     padding-top: 15px;
     padding-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.explanation {
+    width: 45%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -17,11 +34,20 @@ button[type="submit"] {
 }
 
 #exercise-1 {
-    width: 65%;
+    width: 25%;
     height: 25vh;
     overflow-y: scroll;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-block;
+    margin-right: 1%;
+    border: 1px solid black;
+}
+
+#exercise-1b {
+    width: 25%;
+    height: 25vh;
+    overflow-y: scroll;
+    display: inline-block;
+    margin-left: 1%;
     border: 1px solid black;
 }
 
