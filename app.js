@@ -23,28 +23,34 @@ function constants() {
  * Controlling function that calls other
  * functions:
  *
- * 1. arraySum()
- * 2. bookProcessing()
- * 3. Updates console.log and screen
+ * 1. Call the plusAnyNumber and plusAnyNumber2 function
+ * 2. Output resuts to the screen and console.log
  * 4. Reset the form
  *
  */
 function controller(functionNumber, functionValue) {
   console.log("Begin controller()");
   console.log(`Parameters:\nfunctionNumber=${functionNumber}, functionValue=${functionValue}`);
+  // Coerce to a number
   let anyNumber = functionNumber * 1;
   let plusAnyNumber = plus(anyNumber);
   let plusAnyNumber2 = plus2(anyNumber);
+
   let textNode1 = document.createTextNode(`plus${functionNumber}=>plus(${functionValue})=${plusAnyNumber(functionValue * 1)}`);
   let textNode2 = document.createTextNode(`plus${functionNumber}=>plus2(${functionValue})=${plusAnyNumber2(functionValue * 1)}`);
   let breakElement = document.createElement(constants().break);
   let spanElement = document.createElement(constants().span);
+
+  // Output to screen
   document.getElementById(constants().exerciseOneElementId).appendChild(textNode1);
   document.getElementById(constants().exerciseOneElementId).appendChild(spanElement);
   document.getElementById(constants().exerciseOne_B_ElementId).appendChild(textNode2);
   document.getElementById(constants().exerciseOne_B_ElementId).appendChild(breakElement);
+  
   console.log("EXERCISE 1: OUTPUT");
   console.log(`plus${functionNumber}=>plus(${functionValue})=${plusAnyNumber(functionValue * 1)}`);
+  console.log(`plus${functionNumber}=>plus2(${functionValue})=${plusAnyNumber2(functionValue * 1)}`);
+
   // Reset the form
   document.getElementById(constants().formElementId).reset();
 
@@ -59,7 +65,7 @@ function plus(num) {
 
 
 // Shorthand Notation
-function plus2(num) {
+function plus2 (num) {
   console.log(`Num=${num}`);
   return (plusNum) => num + plusNum;
 }
